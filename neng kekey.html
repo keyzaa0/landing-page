@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lee Jun-young | Profile & Biography</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* CSS RESET & VARIABLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        :root {
+            --pink-50: #fff0f5;
+            --pink-100: #ffe4e6;
+            --pink-200: #fecdd3;
+            --pink-300: #fda4af;
+            --pink-400: #fb7185;
+            --pink-500: #f43f5e;
+            --pink-600: #e11d48;
+            --pink-dark: #881337;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --white: #ffffff;
+            --shadow-soft: 0 10px 30px -5px rgba(244, 63, 94, 0.15);
+            --shadow-hover: 0 20px 40px -5px rgba(244, 63, 94, 0.25);
+        }
+
+        body {
+            background-color: var(--pink-50);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--pink-100);
+            z-index: 1000;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--pink-600);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--pink-400);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--pink-500);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 100vh;
+            padding: 120px 5% 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at top right, #ffe4e6 0%, #fff0f5 50%, #ffffff 100%);
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image-wrapper::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--pink-300), var(--pink-500));
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            transform: rotate(-6deg);
+            z-index: 1;
+            opacity: 0.6;
+            animation: morph 8s ease-in-out infinite alternate;
+        }
+
+        .hero-img {
+            position: relative;
+            z-index: 2;
+            width: 320px;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: var(--shadow-soft);
+            border: 4px solid var(--white);
+        }
+
+        .hero-content {
+            flex: 1.2;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--pink-100);
+            color: var(--pink-600);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .hero-title {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: #1e293b;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--pink-500);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-bio {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+        }
+
+        /* QUICK INFO CARDS */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-card {
+            background: var(--white);
+            padding: 1rem;
+            border-radius: 12px;
+            border: 1px solid var(--pink-100);
+            box-shadow: 0 4px 15px rgba(244, 63, 94, 0.05);
+        }
+
+        .info-card i {
+            color: var(--pink-500);
+            margin-right: 8px;
+        }
+
+        .info-card span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: block;
+        }
+
+        .info-card strong {
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        /* SOCIAL MEDIA BUTTONS */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-pink {
+            background: linear-gradient(135deg, var(--pink-400), var(--pink-600));
+            color: var(--white);
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 8px 20px rgba(225, 29, 72, 0.3);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-pink:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(225, 29, 72, 0.4);
+        }
+
+        /* DRAMA / CAREER SECTION */
+        .section {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #1e293b;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--pink-400);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .drama-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .drama-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--pink-100);
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+        }
+
+        .drama-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--pink-300);
+        }
+
+        .drama-year {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--pink-500);
+            background: var(--pink-50);
+            padding: 4px 10px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 0.8rem;
+        }
+
+        .drama-card h3 {
+            font-size: 1.2rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .drama-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--white);
+            border-top: 1px solid var(--pink-100);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer i {
+            color: var(--pink-500);
+        }
+
+        /* ANIMATION */
+        @keyframes morph {
+            0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+            100% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 900px) {
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .info-grid {
+                text-align: left;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .hero-img {
+                width: 260px;
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">Junyoung<span>.</span></div>
+        <ul class="nav-links">
+            <li><a href="#about">Profil</a></li>
+            <li><a href="#dramas">Karya & Drama</a></li>
+            <li><a href="#social">Instagram</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION / BIODATA -->
+    <section class="hero" id="about">
+        <div class="hero-container">
+            <!-- FOTO HERO (1 Foto) -->
+            <div class="hero-image-wrapper">
+                <img src=" https://i.mydramalist.com/v2yzZ_5c.jpg" alt="Lee Jun-young" class="hero-img">
+            </div>
+
+            <!-- DETAIL KONTEN BIODATA -->
+            <div class="hero-content">
+                <span class="badge">Aktor & Penyanyi</span>
+                <h1 class="hero-title">Lee Jun-young</h1>
+                <h2 class="hero-subtitle">이준영 (Jun U-KISS)</h2>
+                <p class="hero-bio">
+                    Lee Jun-young adalah seorang aktor, penyanyi, dan mantan anggota boyband U-KISS asal Korea Selatan. Dikenal lewat kemampuan aktingnya yang memukau di berbagai serial drama populer.
+                </p>
+
+                <!-- GRID INFORMASI -->
+                <div class="info-grid">
+                    <div class="info-card">
+                        <i class="fa-regular fa-calendar"></i>
+                        <span>Tanggal Lahir</span>
+                        <strong>22 Januari 1997</strong>
+                    </div>
+                    <div class="info-card">
+                        <i class="fa-solid fa-ruler-vertical"></i>
+                        <span>Tinggi Badan</span>
+                        <strong>185 cm</strong>
+                    </div>
+                    <div class="info-card">
+                        <i class="fa-solid fa-droplet"></i>
+                        <span>Golongan Darah</span>
+                        <strong>AB</strong>
+                    </div>
+                    <div class="info-card">
+                        <i class="fa-solid fa-building-columns"></i>
+                        <span>Agensi</span>
+                        <strong>Jflex Entertainment</strong>
+                    </div>
+                </div>
+
+                <!-- TOMBOL ACTION -->
+                <div class="social-links" id="social">
+                    <a href="https://www.instagram.com/real_2junyoung/" target="_blank" class="btn-pink">
+                        <i class="fa-brands fa-instagram"></i> Follow Instagram
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DRAMA / CAREER SECTION -->
+    <section class="section" id="dramas">
+        <h2 class="section-title">Drama & Film Populer</h2>
+        <div class="drama-grid">
+            
+            <div class="drama-card">
+                <span class="drama-year">2024</span>
+                <h3>Dreaming of a Freaking Fairytale</h3>
+                <p>Berperan sebagai Moon Cha-min, seorang penerus keluarga konglomerat yang tidak percaya pada cinta.</p>
+            </div>
+
+            <div class="drama-card">
+                <span class="drama-year">2024</span>
+                <h3>The Impossible Heir</h3>
+                <p>Memerankan karakter Kang In-ha, seorang anak luar nikah konglomerat yang berusaha mencapai puncak.</p>
+            </div>
+
+            <div class="drama-card">
+                <span class="drama-year">2022</span>
+                <h3>Love and Leashes</h3>
+                <p>Film romantis Netflix di mana ia berperan sebagai Jung Ji-hoo bersama Seohyun SNSD.</p>
+            </div>
+
+            <div class="drama-card">
+                <span class="drama-year">2021</span>
+                <h3>D.P. (Deserter Pursuit)</h3>
+                <p>Penampilan impresif sebagai Jung Hyun-min yang menyoroti kemampuan akting dan aksi terbaiknya.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Dibuat dengan <i class="fa-solid fa-heart"></i> untuk Lee Jun-young Fans Club.</p>
+    </footer>
+    <Pause";
+      btn.style.backgroundColor = "#2ed573";
+    } else {
+      audio.pause();
+      btn.innerHTML = "▶ Play Music";
+      btn.style.backgroundColor = "#ff4757";
+
+    </footer>
+</body>
+</html>
